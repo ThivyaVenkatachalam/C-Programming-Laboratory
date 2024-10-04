@@ -1,0 +1,12 @@
+include<stdio.h>
+int main()
+{
+    int b;
+    int h,a;
+    scanf("%d",&b);
+    scanf("%d",&h);
+    a=b*h*1/2;
+    printf("%d",a);
+
+    return 0;
+}
