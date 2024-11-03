@@ -1,29 +1,30 @@
 #include <stdio.h>
-int main()
+int main() 
 {
-    int n, pre,rem, i=1, d=1;
+    int n,p,c;
+    int i= 1,d= 1;
     scanf("%d", &n);
-    pre= n% 10;
-    n= n/10;
-    while (n> 0) 
+    p=n%10;
+    n=n/10;
+    while (N > 0) 
     {
-        rem = n% 10;
-        if (rem< pre)
+        c=n%10; 
+        n=n/10; 
+        if (c<p) 
         {
-            i= 0; 
-        } 
-        else if (rem > pre) 
-        {
-            d = 0;
+            i=0;
         }
-        pre = rem;
-        n= n/10;
+        if (c>p) 
+        {
+            d=0;
+        }
+        p=c;
     }
-    if (i||d==0)
+    if (!i&&!d) 
     {
         printf("True\n");
-    } 
-    else 
+    }   
+    else  
     {
         printf("False\n");
     }
