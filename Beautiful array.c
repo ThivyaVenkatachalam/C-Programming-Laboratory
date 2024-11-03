@@ -1,39 +1,46 @@
-#include <stdio.h>
-
-int main() 
-{
-    int N, L;
-    scanf("%d %d", &N, &L);
-
-    int arr[L];
-    int s[10001] = {0}; 
-    int Beautiful = 1;
-    int Ordered = 1;   
-    for (int i = 0; i < L; i++) 
+#include<stdio.h>
+int main()
+ {
+    int n, l;
+    scanf("%d %d", &n, &l);
+    int arr[l];
+    int i,j;
+    for (i = 0; i < l; i++) 
     {
         scanf("%d", &arr[i]);
-        
-        if (arr[i] < 1 || arr[i] > N || s[arr[i]] == 1)
-        {
-            Beautiful = 0;
+    }
+    for (i = 0; i < l; i++) 
+    {
+        if (arr[i] < 1 || arr[i] > n) 
+        { 
+            printf("False\n");
+            return 0;
         }
-        s[arr[i]] = 1;
-        if (i > 0 && arr[i] != arr[i - 1]) 
+        for (j = i + 1; j < l; j++) 
         {
-            if (arr[i] > arr[i - 1] || arr[i] < arr[i - 1]) 
+            if (arr[i] == arr[j])
             {
-                Ordered = 0;
+                printf("False\n");
+                return 0;
             }
         }
     }
-
-    if (Ordered || Beautiful == 0)
+    int a = 1, d= 1;
+    for (i = 1; i < l; i++) 
+    {
+        if (arr[i] > arr[i - 1])
+        d= 0;
+        if (arr[i] < arr[i - 1]) 
+        a= 0;
+    }
+    if (a || d) 
     {
         printf("False\n");
-    } 
-    else 
+    }
+     else 
     {
         printf("True\n");
     }
+
     return 0;
 }
