@@ -6,21 +6,21 @@ int main()
     scanf("%d", &n);
     p=n%10;
     n=n/10;
-    while (N > 0) 
+    while(n> 0) 
     {
         c=n%10; 
         n=n/10; 
-        if (c<p) 
+        if(c<p) 
         {
             i=0;
         }
-        if (c>p) 
+        if(c>p) 
         {
             d=0;
         }
         p=c;
     }
-    if (!i&&!d) 
+    if(!i&&!d) 
     {
         printf("True\n");
     }   
