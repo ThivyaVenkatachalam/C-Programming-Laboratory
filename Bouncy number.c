@@ -20,7 +20,7 @@ int main()
         }
         p=c;
     }
-    if(!i&&!d) 
+    if(i == 0 && d == 0)
     {
         printf("True\n");
     }   
